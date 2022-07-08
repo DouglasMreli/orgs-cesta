@@ -5,8 +5,10 @@ import {
   Montserrat_400Regular, 
   Montserrat_700Bold 
 } from '@expo-google-fonts/montserrat';
+import AppLoading from 'expo-app-loading';
 
 import Cesta from './src/telas/Cesta';
+import mock from './src/mocks/cesta'
 
 export default function App() {
   const [fonteCarregada] = useFonts({
@@ -19,9 +21,9 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView> 
+    <SafeAreaView style={{flex: 1}}> 
       <StatusBar/>
-      <Cesta/>
+      <Cesta {...mock}/>
     </SafeAreaView>
   );
 }
